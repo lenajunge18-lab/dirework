@@ -30,5 +30,13 @@ export function signInWithTwitch(errorPage: "/" | "/setup") {
     provider: "twitch",
     callbackURL: "/dashboard",
     errorCallbackURL: errorPage,
+    additionalParams: {
+      claims: JSON.stringify({
+        id_token: {
+          preferred_username: null,
+          picture: null,
+        },
+      }),
+    },
   });
 }
