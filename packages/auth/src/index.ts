@@ -196,7 +196,7 @@ export function createAuth() {
         clientSecret: env.TWITCH_CLIENT_SECRET,
         // openid only: without user:read:email Twitch never returns the email.
         disableDefaultScope: true,
-        scope: ["openid"],
+        scope: ["openid", "user:read:email"],
         // Only the id_token claims mapProfileToUser/getUserInfo read (sub is
         // always present): the login name and the avatar shown in the user
         // menu. NOTE: better-auth (1.6, still in 1.7) createAuthorizationURL merges
